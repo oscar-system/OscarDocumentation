@@ -25,9 +25,9 @@ jobs:
             if [ "$state" != "open" ]; then
               echo "-> Deleting preview folder for PR $prnum"
               git rm -rf $folder 2>&1 > /dev/null || : # ignore errors
-              git commit -m "delete preview for $PRNUM"
+              git commit -m "Delete preview for PR $prnum"
             fi
-            git push
           done
+          git push
         env:
           GH_TOKEN: ${{ github.token }}
