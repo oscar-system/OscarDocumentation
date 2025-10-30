@@ -26,6 +26,6 @@ jobs:
               echo "-> Deleting preview folder for PR $prnum"
               git rm -rf $folder 2>&1 > /dev/null || : # ignore errors
               git commit -m "delete preview for $PRNUM"
-              git push origin gh-pages:gh-pages
             fi
+            git push
           done
