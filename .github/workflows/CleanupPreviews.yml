@@ -29,3 +29,5 @@ jobs:
             fi
             git push
           done
+        env:
+          GH_TOKEN: ${{ github.token }}
