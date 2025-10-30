@@ -1,0 +1,12 @@
+name: Cleanup Doc Preview
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup-doc-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: gh-pages
