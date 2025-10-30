@@ -20,9 +20,9 @@ jobs:
 
           for folder in previews/*; do
             prnum=$(echo $folder | cut -c 12-)
-            state=$(gh pr view $prnum --json state --jq '.state')
+            state=$(gh api repos/oscar-system/Oscar.jl/pulls/$prnum --jq '.state')
             echo "PR $prnum is $state"
-            if [ "$state" != "OPEN" ]; then
+            if [ "$state" != "open" ]; then
               echo "-> Deleting preview folder for PR $prnum"
               git rm -rf $folder 2>&1 > /dev/null || : # ignore errors
               git commit -m "delete preview for $PRNUM"
