@@ -29,7 +29,7 @@ jobs:
             echo "PR $prnum is $state"
             if [ "$state" != "open" ]; then
               echo "-> Deleting preview folder for PR $prnum"
-              git rm -rf $folder 2>&1 > /dev/null || : # ignore errors
+              git rm -rf $folder > /dev/null 2>&1 || : # ignore errors
               git commit -m "Delete preview for PR $prnum"
             fi
           done
