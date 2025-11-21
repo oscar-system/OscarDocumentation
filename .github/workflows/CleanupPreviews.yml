@@ -1,7 +1,15 @@
 name: Cleanup Doc Preview
 
 on:
+  schedule:
+      # Every Sunday at 5:05 AM UTC
+      - cron: '5 5 * * 0'
   workflow_dispatch:
+
+# Disable concurrent runs
+concurrency:
+  group: cleanup-doc-preview
+  cancel-in-progress: false
 
 jobs:
   cleanup-doc-preview:
@@ -10,3 +18,21 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: gh-pages
+      - name: Delete previews
+        run: |
+          git config user.name "Documenter.jl[bot]"
+          git config user.email "documenter@juliadocs.github.io"
+
+          for folder in previews/*; do
+            prnum=$(echo $folder | cut -c 12-)
+            state=$(gh api repos/oscar-system/Oscar.jl/pulls/$prnum --jq '.state')
+            echo "PR $prnum is $state"
+            if [ "$state" != "open" ]; then
+              echo "-> Deleting preview folder for PR $prnum"
+              git rm -rf $folder > /dev/null 2>&1 || : # ignore errors
+              git commit --quiet -m "Delete preview for PR $prnum"
+            fi
+          done
+          git push
+        env:
+          GH_TOKEN: ${{ github.token }}
