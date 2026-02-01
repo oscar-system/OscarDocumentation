@@ -25,6 +25,8 @@ julia&gt; TropVs = tropical_variety(I,nu)
  Min tropical variety
  Min tropical variety
 
+julia&gt; R,(x,y,z) = QQ[&quot;x&quot;,&quot;y&quot;,&quot;z&quot;];
+
 julia&gt; nu_2 = tropical_semiring_map(QQ,2)
 Map into Min tropical semiring encoding the 2-adic valuation on Rational field
 
@@ -41,14 +43,16 @@ julia&gt; TropI_2 = tropical_variety(I,nu_2; skip_saturation=true, skip_decompos
 Min tropical variety
 
 julia&gt; vertices(TropI_2)
-2-element SubObjectIterator{PointVector{QQFieldElem}}:
- [-4, -4, -4]
- [-4, 0, 0]
+4-element SubObjectIterator{PointVector{QQFieldElem}}:
+ [1, 0, 0]
+ [1, 1, 1]
+ [1, 0, -3]
+ [1, -3, 0]
 
 julia&gt; TropI_3 = tropical_variety(I,nu_3; skip_saturation=true, skip_decomposition=true)
 Min tropical variety
 
 julia&gt; vertices(TropI_3)
 1-element SubObjectIterator{PointVector{QQFieldElem}}:
- [0, -2, -2]
-</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/oscar-system/Oscar.jl/blob/26dbeb0b45ebcab27743abbb7c00ac958948ed75/src/TropicalGeometry/variety.jl#L147-L222">source</a></section></details></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../groebner_theory/">« Tropical Groebner theory</a><a class="docs-footer-nextpage" href="../positive_variety/">Positive tropicalizations of linear ideals »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.16.1 on <span class="colophon-date" title="Friday 23 January 2026 16:28">Friday 23 January 2026</span>. Using Julia version 1.10.10.</p></section><footer class="modal-card-foot"></footer></div></div></div></body><div data-docstringscollapsed="true"></div></html>
+ [0, 0, 0]
+</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/oscar-system/Oscar.jl/blob/4c630039d1c66fc0fe34fb83e82722ca60358508/src/TropicalGeometry/variety.jl#L147-L226">source</a></section></details></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../groebner_theory/">« Tropical Groebner theory</a><a class="docs-footer-nextpage" href="../positive_variety/">Positive tropicalizations of linear ideals »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.16.1 on <span class="colophon-date" title="Friday 30 January 2026 11:12">Friday 30 January 2026</span>. Using Julia version 1.10.10.</p></section><footer class="modal-card-foot"></footer></div></div></div></body><div data-docstringscollapsed="true"></div></html>
